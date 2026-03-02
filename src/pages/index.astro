@@ -1,0 +1,547 @@
+---
+const page = {
+  lang: 'en',
+  title: 'peto.dev | Problem Solver | Platform Engineer',
+  description:
+    'peto.dev - Problem Solver, Platform Engineer, and DevOps Engineer specialized in Cloudflare, AWS, Serverless, IaC, CI/CD, Kubernetes, Observability, TypeScript, and Python.',
+  canonical: 'https://peto.dev/'
+};
+---
+
+<!doctype html>
+<html lang={page.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{page.title}</title>
+    <meta name="description" content={page.description} />
+    <link rel="canonical" href={page.canonical} />
+    <link rel="alternate" href="https://peto.dev/" hreflang="en" />
+    <link rel="alternate" href="https://peto.dev/es/" hreflang="es" />
+    <link rel="alternate" href="https://peto.dev/" hreflang="x-default" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://peto.dev/" />
+    <meta property="og:title" content="peto.dev | Problem Solver | Platform Engineer" />
+    <meta property="og:description" content={page.description} />
+    <meta property="og:site_name" content="peto.dev" />
+    <meta property="og:image" content="https://peto.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="peto.dev | Problem Solver | Platform Engineer" />
+    <meta name="twitter:description" content={page.description} />
+    <meta name="twitter:image" content="https://peto.dev/og-image.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#171A1F" />
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Juan Camilo Restrepo Bedoya",
+            "alternateName": "peto.dev",
+            "url": "https://peto.dev/",
+            "jobTitle": "Platform Engineer | Serverless Developer | DevOps Engineer",
+            "description": "Problem Solver focused on Cloudflare, AWS, and serverless systems.",
+            "knowsAbout": [
+              "Cloudflare",
+              "AWS",
+              "Serverless",
+              "Infrastructure as Code",
+              "CI/CD",
+              "Kubernetes",
+              "Prometheus",
+              "Grafana",
+              "Datadog",
+              "WAF",
+              "SASE",
+              "TypeScript",
+              "Python"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/juan-restrepo-it/",
+              "https://github.com/juancarestre",
+              "https://www.credly.com/users/juan-camilo-restrepo-bedoya/badges#credly"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "name": "peto.dev",
+            "url": "https://peto.dev/",
+            "inLanguage": ["en", "es"]
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg: #171a1f;
+        --txt: #9fa5ae;
+        --txt-strong: #d8dadd;
+        --btn: #f48120;
+        --brd: #2d333c;
+        --panel: #202227;
+      }
+
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--txt);
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+
+      .shell {
+        width: min(1080px, calc(100% - 1.6rem));
+        margin: 0.9rem auto;
+        border: 1px solid var(--brd);
+        background: linear-gradient(90deg, transparent 49.7%, rgba(244, 129, 32, 0.04) 50%, transparent 50.3%) 0 0 / 28px 28px, var(--bg);
+        padding: clamp(1rem, 2.4vw, 2rem);
+      }
+
+      .top {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        border: 1px solid var(--brd);
+        overflow: hidden;
+      }
+
+      .lang-switch a {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        text-decoration: none;
+        padding: 0.44rem 0.72rem;
+        color: var(--txt-strong);
+        background: #15181d;
+      }
+
+      .lang-switch a[aria-current='page'] {
+        background: var(--btn);
+        color: var(--txt-strong);
+        font-weight: 700;
+      }
+
+      .hero {
+        margin-top: 0.45rem;
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        gap: 1.2rem;
+      }
+
+      .terminal {
+        border: 1px solid var(--brd);
+        background: #15181d;
+        padding: 0.9rem;
+      }
+
+      .terminal-top {
+        display: flex;
+        align-items: center;
+        gap: 0.38rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 999px;
+        background: var(--brd);
+      }
+
+      .dot:last-child { background: var(--btn); }
+
+      .terminal-row {
+        display: flex;
+        align-items: baseline;
+        gap: 0.46rem;
+      }
+
+      .prompt,
+      .cli-hint,
+      h1,
+      h2,
+      .lead,
+      .solver,
+      .tag,
+      .project-status,
+      .cta,
+      .metric-k {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      .prompt {
+        color: var(--btn);
+        font-weight: 700;
+        font-size: clamp(1.1rem, 2vw, 1.34rem);
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--txt-strong);
+        font-size: clamp(1.75rem, 4.4vw, 3.35rem);
+        line-height: 1.06;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 0.55ch;
+        color: var(--btn);
+        animation: blink 1s steps(1, end) infinite;
+      }
+
+      .cli-hint {
+        color: var(--txt-strong);
+      }
+
+      .solver {
+        margin: 0.75rem 0 0.15rem;
+        color: var(--txt-strong);
+        font-size: clamp(1rem, 1.9vw, 1.28rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .lead {
+        margin: 0.65rem 0 0;
+        color: var(--btn);
+        font-size: clamp(0.92rem, 1.7vw, 1.08rem);
+      }
+
+      .hero-actions {
+        margin-top: 0.8rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        padding: 0.64rem 0.84rem;
+        border: 1px solid var(--btn);
+        text-decoration: none;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .cta.primary {
+        background: var(--btn);
+        color: var(--txt-strong);
+      }
+
+      .cta.secondary {
+        background: transparent;
+        color: var(--txt-strong);
+      }
+
+      .intro {
+        margin: 0;
+        color: var(--txt-strong);
+        line-height: 1.6;
+        font-size: clamp(0.9rem, 1.35vw, 1rem);
+        border-left: 2px solid var(--brd);
+        padding-left: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .layout {
+        margin-top: 1.35rem;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.85rem;
+      }
+
+      .panel {
+        border: 1px solid var(--brd);
+        background: var(--panel);
+        padding: 1rem;
+        position: relative;
+      }
+
+      .panel::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--btn) 0 22%, transparent 22%);
+      }
+
+      .projects { grid-column: span 7; }
+      .skills { grid-column: span 5; }
+      .links { grid-column: span 12; }
+
+      h2 {
+        margin: 0 0 0.8rem;
+        color: var(--txt-strong);
+        font-size: 1.03rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      ul { margin: 0; padding-left: 1rem; }
+      li + li { margin-top: 0.55rem; }
+
+      a {
+        color: var(--txt-strong);
+        text-decoration-color: var(--btn);
+        text-underline-offset: 0.22rem;
+      }
+
+      a:hover { color: var(--btn); }
+
+      .project-list { list-style: none; padding: 0; }
+      .project-list li + li { margin-top: 0.7rem; }
+
+      .project-item {
+        border: 1px solid var(--brd);
+        background: #1b1e23;
+        padding: 0.7rem;
+      }
+
+      .project-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        align-items: baseline;
+      }
+
+      .project-status {
+        color: var(--btn);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+      }
+
+      .project-desc {
+        margin: 0.42rem 0 0;
+        font-size: 0.91rem;
+        color: var(--txt-strong);
+      }
+
+      .tags {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .tag {
+        font-size: 0.73rem;
+        border: 1px solid var(--brd);
+        padding: 0.14rem 0.36rem;
+        color: var(--txt-strong);
+      }
+
+      .link-grid {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .link-grid li { margin: 0; }
+
+      .link {
+        border: 1px solid var(--brd);
+        background: #1b1e23;
+        padding: 0.72rem 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        text-decoration: none;
+      }
+
+      .icon {
+        width: 1rem;
+        height: 1rem;
+        color: var(--btn);
+        flex: 0 0 auto;
+      }
+
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+        }
+
+        .intro {
+          border-left: 0;
+          border-top: 2px solid var(--brd);
+          padding-left: 0;
+          padding-top: 0.75rem;
+          font-size: 0.88rem;
+        }
+
+        .projects,
+        .skills,
+        .links {
+          grid-column: span 12;
+        }
+
+        .link-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="top">
+        <nav class="lang-switch" aria-label="Language switcher">
+          <a href="/" aria-current="page">EN</a>
+          <a href="/es/">ES</a>
+        </nav>
+      </div>
+
+      <section class="hero">
+        <div class="terminal">
+          <div class="terminal-top" aria-hidden="true">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="terminal-row">
+            <span class="prompt">$</span>
+            <h1><span id="typed-name">peto --dev</span><span class="cursor" aria-hidden="true">_</span></h1>
+          </div>
+          <div class="terminal-row" aria-hidden="true">
+            <span class="prompt">></span>
+            <span class="cli-hint">Problem Solver</span>
+          </div>
+          <p class="lead">Platform Engineer | Serverless Developer | DevOps Engineer</p>
+          <div class="hero-actions">
+            <a class="cta primary" href="mailto:hello@peto.dev">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+              Email me
+            </a>
+            <a class="cta secondary" href="https://www.linkedin.com/in/juan-restrepo-it/" target="_blank" rel="noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56a1.95 1.95 0 1 0-3.9 0 1.95 1.95 0 0 0 3.9 0ZM20 13.38c0-3.05-1.63-4.47-3.8-4.47-1.75 0-2.53.96-2.96 1.63V8.5H9.86V20h3.38v-6.08c0-1.6.3-3.14 2.28-3.14 1.95 0 1.98 1.83 1.98 3.24V20H20v-6.62Z"/></svg>
+              LinkedIn DM
+            </a>
+          </div>
+        </div>
+        <p class="intro">
+          I build cloud systems focused on Cloudflare and AWS, specializing in serverless, Infrastructure as Code,
+          CI/CD, Kubernetes, observability, TypeScript, and Python.
+        </p>
+      </section>
+
+      <section class="layout">
+        <article class="panel projects">
+          <h2>Side Projects</h2>
+          <ul class="project-list">
+            <li class="project-item">
+              <div class="project-head">
+                <a href="https://happyproblems.ai" target="_blank" rel="noreferrer">happyproblems.ai</a>
+                <span class="project-status">Live</span>
+              </div>
+              <p class="project-desc">
+                Community for problem discovery and idea validation.
+              </p>
+              <div class="tags">
+                <span class="tag">Community</span>
+                <span class="tag">Problem Discovery</span>
+                <span class="tag">AI Search</span>
+              </div>
+            </li>
+            <li class="project-item">
+              <div class="project-head">
+                <a href="https://hesitationisdefeat.com" target="_blank" rel="noreferrer">hesitationisdefeat.com</a>
+                <span class="project-status">Live</span>
+              </div>
+              <p class="project-desc">
+                Online card game inspired by Triple Triad.
+              </p>
+              <div class="tags">
+                <span class="tag">Card Game</span>
+                <span class="tag">Triple Triad</span>
+                <span class="tag">Game Platform</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="panel skills">
+          <h2>Core Expertise</h2>
+          <ul>
+            <li>Serverless architecture and cloud-native operations</li>
+            <li>Cloudflare and AWS specialization</li>
+            <li>Infrastructure as Code and CI/CD</li>
+            <li>A lot of agentic AI engineering</li>
+            <li>Kubernetes, TypeScript, and Python</li>
+            <li>Observability with Prometheus, Grafana, and Datadog</li>
+            <li>WAF, security, and SASE</li>
+          </ul>
+        </article>
+
+        <article class="panel links">
+          <h2>Contact & Links</h2>
+          <ul class="link-grid">
+            <li>
+              <a class="link" href="https://www.linkedin.com/in/juan-restrepo-it/" target="_blank" rel="noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56a1.95 1.95 0 1 0-3.9 0 1.95 1.95 0 0 0 3.9 0ZM20 13.38c0-3.05-1.63-4.47-3.8-4.47-1.75 0-2.53.96-2.96 1.63V8.5H9.86V20h3.38v-6.08c0-1.6.3-3.14 2.28-3.14 1.95 0 1.98 1.83 1.98 3.24V20H20v-6.62Z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="https://github.com/juancarestre" target="_blank" rel="noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.1c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.08 1.84 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.66-.31-5.47-1.35-5.47-6a4.66 4.66 0 0 1 1.24-3.25 4.3 4.3 0 0 1 .12-3.2s1-.33 3.3 1.24a11.3 11.3 0 0 1 6 0c2.3-1.57 3.3-1.24 3.3-1.24.45 1.01.5 2.2.12 3.2a4.63 4.63 0 0 1 1.24 3.25c0 4.66-2.82 5.68-5.51 5.99.43.37.82 1.1.82 2.23v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="https://platzi.com/cursos/serverless/" target="_blank" rel="noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8 12 4l8 4-8 4-8-4Z"/><path d="M6 10v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V10"/></svg>
+                <span>Platzi course: Serverless</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="https://www.credly.com/users/juan-camilo-restrepo-bedoya/badges#credly" target="_blank" rel="noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="5"/><path d="m9 14-1 7 4-2 4 2-1-7"/></svg>
+                <span>Certifications (Credly)</span>
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const typedName = document.querySelector('#typed-name');
+      const titleText = 'peto --dev';
+      let typeIndex = 0;
+
+      const typeLoop = () => {
+        if (!(typedName instanceof HTMLElement)) return;
+        typeIndex = Math.min(typeIndex + 1, titleText.length);
+        typedName.textContent = titleText.slice(0, typeIndex);
+        if (typeIndex < titleText.length) setTimeout(typeLoop, 95);
+      };
+
+      if (typedName instanceof HTMLElement) {
+        typedName.textContent = '';
+        typeLoop();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "peto-dev",
+  "compatibility_date": "2026-03-02",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    {
+      "pattern": "peto.dev",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.peto.dev",
+      "custom_domain": true
+    }
+  ]
+}
