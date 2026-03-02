@@ -102,7 +102,10 @@ const page = {
         width: min(1080px, calc(100% - 1.6rem));
         margin: 0.9rem auto;
         border: 1px solid var(--brd);
-        background: linear-gradient(90deg, transparent 49.7%, rgba(244, 129, 32, 0.04) 50%, transparent 50.3%) 0 0 / 28px 28px, var(--bg);
+        background:
+          radial-gradient(circle, rgba(255,255,255,0.07) 0.5px, transparent 0.5px)
+          var(--bg);
+        background-size: 16px 16px;
         padding: clamp(1rem, 2.4vw, 2rem);
       }
 
@@ -121,13 +124,21 @@ const page = {
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
         text-decoration: none;
         padding: 0.44rem 0.72rem;
-        color: var(--txt-strong);
+        color: var(--txt);
         background: #15181d;
+        transition: all 0.25s;
+        font-size: 0.82rem;
+        letter-spacing: 0.03em;
+      }
+
+      .lang-switch a:hover {
+        color: var(--txt-strong);
+        background: #1e2128;
       }
 
       .lang-switch a[aria-current='page'] {
         background: var(--btn);
-        color: var(--txt-strong);
+        color: #fff;
         font-weight: 700;
       }
 
@@ -152,13 +163,14 @@ const page = {
       }
 
       .dot {
-        width: 0.55rem;
-        height: 0.55rem;
+        width: 0.6rem;
+        height: 0.6rem;
         border-radius: 999px;
-        background: var(--brd);
       }
 
-      .dot:last-child { background: var(--btn); }
+      .dot:nth-child(1) { background: #ff5f57; }
+      .dot:nth-child(2) { background: #febc2e; }
+      .dot:nth-child(3) { background: #28c840; }
 
       .terminal-row {
         display: flex;
@@ -235,16 +247,25 @@ const page = {
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.04em;
+        transition: color 0.2s, background 0.2s;
       }
 
       .cta.primary {
         background: var(--btn);
-        color: var(--txt-strong);
+        color: #fff;
+      }
+
+      .cta.primary:hover {
+        background: #ff922b;
       }
 
       .cta.secondary {
         background: transparent;
         color: var(--txt-strong);
+      }
+
+      .cta.secondary:hover {
+        color: var(--btn);
       }
 
       .intro {
@@ -270,6 +291,7 @@ const page = {
         background: var(--panel);
         padding: 1rem;
         position: relative;
+        overflow: hidden;
       }
 
       .panel::before {
@@ -279,7 +301,7 @@ const page = {
         top: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, var(--btn) 0 22%, transparent 22%);
+        background: linear-gradient(90deg, var(--btn) 0%, rgba(244, 129, 32, 0.3) 40%, transparent 70%);
       }
 
       .projects { grid-column: span 7; }
@@ -301,6 +323,7 @@ const page = {
         color: var(--txt-strong);
         text-decoration-color: var(--btn);
         text-underline-offset: 0.22rem;
+        transition: color 0.2s;
       }
 
       a:hover { color: var(--btn); }
@@ -323,7 +346,7 @@ const page = {
 
       .project-status {
         color: var(--btn);
-        font-size: 0.76rem;
+        font-size: 0.73rem;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         white-space: nowrap;
@@ -343,10 +366,11 @@ const page = {
       }
 
       .tag {
-        font-size: 0.73rem;
+        font-size: 0.72rem;
         border: 1px solid var(--brd);
-        padding: 0.14rem 0.36rem;
-        color: var(--txt-strong);
+        padding: 0.18rem 0.42rem;
+        color: var(--txt);
+        background: rgba(244, 129, 32, 0.04);
       }
 
       .link-grid {
@@ -367,6 +391,11 @@ const page = {
         align-items: center;
         gap: 0.55rem;
         text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .link:hover {
+        color: var(--btn);
       }
 
       .icon {
@@ -378,6 +407,13 @@ const page = {
 
       @keyframes blink {
         50% { opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
       }
 
       @media (max-width: 920px) {
