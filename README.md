@@ -3,7 +3,7 @@
 Static Astro personal site deployed on Cloudflare Workers Assets.
 
 ## Local development
-
+###
 ```bash
 npm install
 npm run dev
