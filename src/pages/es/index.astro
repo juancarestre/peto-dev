@@ -211,6 +211,11 @@ const page = {
         border: 1px solid var(--brd); background: #1b1e23; padding: 0.7rem;
       }
 
+      .project-item.featured {
+        border-color: rgba(244, 129, 32, 0.75);
+        background: linear-gradient(180deg, rgba(244, 129, 32, 0.13), #1b1e23 45%);
+      }
+
       .project-head { display: flex; justify-content: space-between; gap: 0.8rem; align-items: baseline; }
 
       .project-status {
@@ -307,6 +312,21 @@ const page = {
         <article class="panel projects">
           <h2>Proyectos Paralelos</h2>
           <ul class="project-list">
+            <li class="project-item featured">
+              <div class="project-head">
+                <a href="https://github.com/juancarestre/rfaf" target="_blank" rel="noreferrer">rfaf</a>
+                <span class="project-status">Destacado</span>
+              </div>
+              <p class="project-desc">
+                CLI/TUI en Bun + Ink para lectura de alta velocidad en terminal, con transformaciones opcionales de IA.
+              </p>
+              <div class="tags">
+                <span class="tag">CLI/TUI</span>
+                <span class="tag">Bun</span>
+                <span class="tag">Lectura Rápida</span>
+                <span class="tag">IA</span>
+              </div>
+            </li>
             <li class="project-item">
               <div class="project-head">
                 <a href="https://happyproblems.ai" target="_blank" rel="noreferrer">happyproblems.ai</a>

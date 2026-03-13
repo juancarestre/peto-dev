@@ -337,6 +337,11 @@ const page = {
         padding: 0.7rem;
       }
 
+      .project-item.featured {
+        border-color: rgba(244, 129, 32, 0.75);
+        background: linear-gradient(180deg, rgba(244, 129, 32, 0.13), #1b1e23 45%);
+      }
+
       .project-head {
         display: flex;
         justify-content: space-between;
@@ -491,6 +496,21 @@ const page = {
         <article class="panel projects">
           <h2>Side Projects</h2>
           <ul class="project-list">
+            <li class="project-item featured">
+              <div class="project-head">
+                <a href="https://github.com/juancarestre/rfaf" target="_blank" rel="noreferrer">rfaf</a>
+                <span class="project-status">Featured</span>
+              </div>
+              <p class="project-desc">
+                Bun + Ink CLI/TUI for high-focus speed reading in the terminal, with optional AI transforms.
+              </p>
+              <div class="tags">
+                <span class="tag">CLI/TUI</span>
+                <span class="tag">Bun</span>
+                <span class="tag">Speed Reading</span>
+                <span class="tag">AI</span>
+              </div>
+            </li>
             <li class="project-item">
               <div class="project-head">
                 <a href="https://happyproblems.ai" target="_blank" rel="noreferrer">happyproblems.ai</a>
